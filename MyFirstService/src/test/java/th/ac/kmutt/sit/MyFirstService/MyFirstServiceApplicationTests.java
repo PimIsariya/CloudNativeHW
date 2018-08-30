@@ -14,10 +14,15 @@ public class MyFirstServiceApplicationTests {
     
     
 	@Test
-	public void showUser() {
+	public void showAllUser() {
             UserController uc = new UserController();
             assertNotNull(uc.getAllUser());
-            
 	}
+        
+        @Test
+        public void showUser() {
+            UserController uc = new UserController();
+            assertEquals("User{id=2, name='Alfled'}", uc.getUserID(2).toString());
+        }
 
 }
